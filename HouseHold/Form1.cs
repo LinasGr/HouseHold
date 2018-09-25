@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SheetTools;
 
 namespace HouseHold
 {
@@ -34,9 +35,19 @@ namespace HouseHold
       }
     }
 
-    private void Form1_Load(object sender, EventArgs e)
+    private void button_PushToSheet_Click(object sender, EventArgs e)
     {
-
+      GoogleSheet sheet = new GoogleSheet("1W126R96CXLJJ7x1R14rh70RtGOEEQnJv5J7E32Jx7wI","HouseHold");
+      for (int i = 0; i < this.dataGridView1.Rows.Count-1; i++)
+      {
+        string[] line=new string[this.dataGridView1.Rows[i].Cells.Count];
+        for (int o = 0; o < this.dataGridView1.Rows[i].Cells.Count; o++)
+        {
+          line[o] = this.dataGridView1.Rows[i].Cells[o].Value.ToString();
+        }
+        sheet.CreateValuesLine(line);
+      }
+      sheet.AppentCellsAtEnd("A3");
     }
   }
 }

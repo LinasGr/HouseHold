@@ -25,7 +25,5 @@ namespace HouseHold
 
     public string[] SplitLine(string line) => line.Split(',').Select(x => x.Trim('"')).ToArray();
 
-
-
   }
 }
