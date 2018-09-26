@@ -38,6 +38,7 @@ namespace HouseHold
     private void button_PushToSheet_Click(object sender, EventArgs e)
     {
       GoogleSheet sheet = new GoogleSheet("1W126R96CXLJJ7x1R14rh70RtGOEEQnJv5J7E32Jx7wI","HouseHold");
+      GoogleSheet filter=new GoogleSheet("1W126R96CXLJJ7x1R14rh70RtGOEEQnJv5J7E32Jx7wI","Filter");
       for (int i = 0; i < this.dataGridView1.Rows.Count-1; i++)
       {
         string[] line=new string[this.dataGridView1.Rows[i].Cells.Count];
@@ -45,9 +46,17 @@ namespace HouseHold
         {
           line[o] = this.dataGridView1.Rows[i].Cells[o].Value.ToString();
         }
-        sheet.CreateValuesLine(line);
+        filter.CreateValuesLine(line);
+        filter.UpdateCellsData("A2:G2");
+        filter.ReadCellsData("H1");
+        if (filter.values.Values[0][0].ToString() != "TRUE")
+        {
+          sheet.CreateValuesLine(line);
+          sheet.AppentCellsAtEnd("A3");
+          sheet.ClearValues();
+        }
+        filter.ClearValues();
       }
-      sheet.AppentCellsAtEnd("A3");
     }
   }
 }
