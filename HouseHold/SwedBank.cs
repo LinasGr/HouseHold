@@ -8,19 +8,10 @@ namespace HouseHold
 {
   class SwedBank : Bank
   {
-    private Dictionary<int, string> stulpeliai;
-    private Dictionary<int, int> mapStulpeliai;
+    //private Dictionary<int, string> stulpeliai;
 
     public SwedBank(string fileName)
     {
-      //mapStulpeliai = new Dictionary<int, int>();
-      //mapStulpeliai.Add(1, 1);//IBAN
-      //mapStulpeliai.Add(2, 3);
-      //mapStulpeliai.Add(3, 4);
-      //mapStulpeliai.Add(4, 5);
-      //mapStulpeliai.Add(5, 6);
-      //mapStulpeliai.Add(6, 7);
-      //mapStulpeliai.Add(7, 8);
       ReadFileData(fileName);
     }
 
