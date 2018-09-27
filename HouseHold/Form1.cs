@@ -77,8 +77,9 @@ namespace HouseHold
         }
       }
 
-      //Reading search results from Filter sheet
+      //Reading search results from Filter sheet and cleans filter tab
       filter.ReadCellsData("H1:H" + filter.values.Values.Count);
+      filter.DeleteRange("A1:H");
 
       //Removing dublicate raws from sheet values
       for (int i = 0; i < filter.values.Values.Count; i++)

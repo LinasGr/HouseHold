@@ -49,6 +49,7 @@
       // openFileDialog1
       // 
       this.openFileDialog1.FileName = "1.csv";
+      this.openFileDialog1.Filter = "SwedBank|*.csv|SebBank|*.acc";
       this.openFileDialog1.InitialDirectory = "\"E://\"";
       // 
       // textBox_FileName

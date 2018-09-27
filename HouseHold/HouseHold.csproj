@@ -56,7 +56,7 @@
     </Reference>
     <Reference Include="SheetTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SheetTools\SheetTools\bin\Release\netstandard2.0\SheetTools.dll</HintPath>
+      <HintPath>..\..\SheetTools\Debuger\bin\Debug\SheetTools.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
