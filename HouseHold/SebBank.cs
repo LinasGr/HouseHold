@@ -26,7 +26,7 @@ namespace HouseHold
         this.data[i].Add((object)this.data[i][0].ToString().Insert(4,"-").Insert(7,"-"));
         this.data[i].Add(this.data[i][6]);
         this.data[i].Add(this.data[i][4]);
-        this.data[i].Add(this.data[i][2].ToString().Insert(this.data[i][2].ToString().Length - 2, "."));
+        this.data[i].Add(this.data[i][2].ToString().Insert(this.data[i][2].ToString().Length - 2, ","));
         this.data[i].Add(this.data[i][3]);
         this.data[i].Add(this.data[i][1]);
         this.data[i].RemoveRange(0,7);
