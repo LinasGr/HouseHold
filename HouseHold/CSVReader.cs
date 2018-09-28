@@ -19,11 +19,11 @@ namespace HouseHold
       lines = new string[text.Length - 1];
       if (text.Length > 0) columns = SplitLine(text[0]);
       if (text.Length > 1) lines = text.Skip(1).ToArray();
-      
+
       data = lines.Select(l => SplitLine(l).ToList<object>()).ToList();
     }
 
-    public string[] SplitLine(string line) => line.Split(',').Select(x => x.Trim('"')).ToArray();
+    public string[] SplitLine(string line) => line.Remove(0,1).Split(new string[] {"\",\"" },StringSplitOptions.None).ToArray();
 
   }
 }

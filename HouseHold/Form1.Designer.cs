@@ -35,6 +35,7 @@
       this.dataGridView1 = new System.Windows.Forms.DataGridView();
       this.button_PushToSheet = new System.Windows.Forms.Button();
       this.progressBar_Push = new System.Windows.Forms.ProgressBar();
+      this.button_Setup = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
@@ -57,12 +58,12 @@
       // 
       this.textBox_FileName.Location = new System.Drawing.Point(81, 23);
       this.textBox_FileName.Name = "textBox_FileName";
-      this.textBox_FileName.Size = new System.Drawing.Size(454, 20);
+      this.textBox_FileName.Size = new System.Drawing.Size(403, 20);
       this.textBox_FileName.TabIndex = 1;
       // 
       // button_BrowseFile
       // 
-      this.button_BrowseFile.Location = new System.Drawing.Point(541, 20);
+      this.button_BrowseFile.Location = new System.Drawing.Point(490, 20);
       this.button_BrowseFile.Name = "button_BrowseFile";
       this.button_BrowseFile.Size = new System.Drawing.Size(75, 23);
       this.button_BrowseFile.TabIndex = 2;
@@ -86,7 +87,7 @@
       // 
       // button_PushToSheet
       // 
-      this.button_PushToSheet.Location = new System.Drawing.Point(622, 20);
+      this.button_PushToSheet.Location = new System.Drawing.Point(571, 20);
       this.button_PushToSheet.Name = "button_PushToSheet";
       this.button_PushToSheet.Size = new System.Drawing.Size(97, 23);
       this.button_PushToSheet.TabIndex = 4;
@@ -96,17 +97,27 @@
       // 
       // progressBar_Push
       // 
-      this.progressBar_Push.Location = new System.Drawing.Point(725, 20);
+      this.progressBar_Push.Location = new System.Drawing.Point(674, 20);
       this.progressBar_Push.Name = "progressBar_Push";
-      this.progressBar_Push.Size = new System.Drawing.Size(100, 23);
+      this.progressBar_Push.Size = new System.Drawing.Size(129, 23);
       this.progressBar_Push.TabIndex = 5;
-      this.progressBar_Push.Visible = false;
+      // 
+      // button_Setup
+      // 
+      this.button_Setup.Location = new System.Drawing.Point(809, 20);
+      this.button_Setup.Name = "button_Setup";
+      this.button_Setup.Size = new System.Drawing.Size(97, 23);
+      this.button_Setup.TabIndex = 6;
+      this.button_Setup.Text = "Setup";
+      this.button_Setup.UseVisualStyleBackColor = true;
+      this.button_Setup.Click += new System.EventHandler(this.button_Setup_Click);
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(918, 433);
+      this.Controls.Add(this.button_Setup);
       this.Controls.Add(this.progressBar_Push);
       this.Controls.Add(this.button_PushToSheet);
       this.Controls.Add(this.dataGridView1);
@@ -130,6 +141,7 @@
     private System.Windows.Forms.DataGridView dataGridView1;
     private System.Windows.Forms.Button button_PushToSheet;
     private System.Windows.Forms.ProgressBar progressBar_Push;
+    private System.Windows.Forms.Button button_Setup;
   }
 }
 
