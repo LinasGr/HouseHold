@@ -116,7 +116,8 @@ namespace HouseHold
       }
       if (!settings.data.ContainsKey("Name"))
       {
-
+        MessageBox.Show(this, "No user Name selected!\nPlease go to Setup Sheet.", "Error", MessageBoxButtons.OK);
+        this.Close();
       }
     }
   }

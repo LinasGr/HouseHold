@@ -30,6 +30,7 @@
     {
       this.button_AddBankData = new System.Windows.Forms.Button();
       this.button_SetupSheet = new System.Windows.Forms.Button();
+      this.button_AddUserData = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // button_AddBankData
@@ -52,11 +53,22 @@
       this.button_SetupSheet.UseVisualStyleBackColor = true;
       this.button_SetupSheet.Click += new System.EventHandler(this.button_SetupSheet_Click);
       // 
+      // button_AddUserData
+      // 
+      this.button_AddUserData.Location = new System.Drawing.Point(62, 107);
+      this.button_AddUserData.Name = "button_AddUserData";
+      this.button_AddUserData.Size = new System.Drawing.Size(150, 23);
+      this.button_AddUserData.TabIndex = 2;
+      this.button_AddUserData.Text = "Add User IBAN";
+      this.button_AddUserData.UseVisualStyleBackColor = true;
+      this.button_AddUserData.Click += new System.EventHandler(this.button_AddUserIBAN_Click);
+      // 
       // Form_Menu
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(273, 228);
+      this.ClientSize = new System.Drawing.Size(277, 228);
+      this.Controls.Add(this.button_AddUserData);
       this.Controls.Add(this.button_SetupSheet);
       this.Controls.Add(this.button_AddBankData);
       this.Name = "Form_Menu";
@@ -69,5 +81,6 @@
 
     private System.Windows.Forms.Button button_AddBankData;
     private System.Windows.Forms.Button button_SetupSheet;
+    private System.Windows.Forms.Button button_AddUserData;
   }
 }

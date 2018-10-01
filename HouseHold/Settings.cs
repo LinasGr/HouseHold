@@ -30,7 +30,7 @@ namespace HouseHold
     }
     public void SaveData()
     {
-      File.WriteAllLines(this.fileName, data.Select((x,i)=>x+":"+i));
+      File.WriteAllLines(this.fileName, data.Select(x=>x.Key+":"+x.Value));
     }
   }
 }

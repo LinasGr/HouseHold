@@ -23,10 +23,15 @@ namespace HouseHold
 
     private void button_OK_Click(object sender, EventArgs e)
     {
-      this.SheetIDRegex(sender,e);
-      if (this.textBox_Name.Text.Length > 0) this.settings.data["Name"] = this.textBox_Name.Text;
-      if (this.textBox_SheetID.Text.Length > 0) this.settings.data["SheetID"] = this.textBox_SheetID.Text;
-      this.settings.SaveData();
+      this.SheetIDRegex(sender, e);
+      if (textBox_Name.Text.Length > 0)
+        if (settings.data.ContainsKey("Name")) settings.data["Name"] = textBox_Name.Text;
+        else settings.data.Add("Name",textBox_Name.Text);
+      if (textBox_SheetID.Text.Length > 0)
+        if (settings.data.ContainsKey("SheetID")) settings.data["SheetID"] = textBox_SheetID.Text;
+        else settings.data.Add("SheetID",textBox_SheetID.Text);
+      settings.SaveData();
+      this.Close();
     }
 
     private void button_Cancel_Click(object sender, EventArgs e)

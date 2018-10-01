@@ -1,6 +1,6 @@
 ﻿namespace HouseHold
 {
-  partial class Form_AddUserData
+  partial class Form_AddUserIBAN
   {
     /// <summary>
     /// Required designer variable.
@@ -33,7 +33,7 @@
       this.label_IBAN = new System.Windows.Forms.Label();
       this.textBox_Explanation = new System.Windows.Forms.TextBox();
       this.textBox_IBAN = new System.Windows.Forms.TextBox();
-      this.button_Save = new System.Windows.Forms.Button();
+      this.button_PushToSheet = new System.Windows.Forms.Button();
       this.button_Cancel = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
@@ -78,39 +78,41 @@
       this.textBox_IBAN.Size = new System.Drawing.Size(415, 20);
       this.textBox_IBAN.TabIndex = 4;
       // 
-      // button_Save
+      // button_PushToSheet
       // 
-      this.button_Save.Location = new System.Drawing.Point(189, 126);
-      this.button_Save.Name = "button_Save";
-      this.button_Save.Size = new System.Drawing.Size(75, 23);
-      this.button_Save.TabIndex = 5;
-      this.button_Save.Text = "Save";
-      this.button_Save.UseVisualStyleBackColor = true;
-      this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
+      this.button_PushToSheet.Location = new System.Drawing.Point(159, 127);
+      this.button_PushToSheet.Name = "button_PushToSheet";
+      this.button_PushToSheet.Size = new System.Drawing.Size(100, 23);
+      this.button_PushToSheet.TabIndex = 5;
+      this.button_PushToSheet.Text = "Push to sheet";
+      this.button_PushToSheet.UseVisualStyleBackColor = true;
+      this.button_PushToSheet.Click += new System.EventHandler(this.button_PushToSheet_Click);
       // 
       // button_Cancel
       // 
-      this.button_Cancel.Location = new System.Drawing.Point(270, 126);
+      this.button_Cancel.Location = new System.Drawing.Point(265, 127);
       this.button_Cancel.Name = "button_Cancel";
-      this.button_Cancel.Size = new System.Drawing.Size(75, 23);
+      this.button_Cancel.Size = new System.Drawing.Size(100, 23);
       this.button_Cancel.TabIndex = 6;
       this.button_Cancel.Text = "Cancel";
       this.button_Cancel.UseVisualStyleBackColor = true;
+      this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
       // 
-      // Form_AddUserData
+      // Form_AddUserIBAN
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(535, 189);
       this.Controls.Add(this.button_Cancel);
-      this.Controls.Add(this.button_Save);
+      this.Controls.Add(this.button_PushToSheet);
       this.Controls.Add(this.textBox_IBAN);
       this.Controls.Add(this.textBox_Explanation);
       this.Controls.Add(this.label_IBAN);
       this.Controls.Add(this.label_Explanation);
       this.Controls.Add(this.label_User);
-      this.Name = "Form_AddUserData";
-      this.Text = "HouseHold Add user data";
+      this.Name = "Form_AddUserIBAN";
+      this.Text = "HouseHold Add user IBAN";
+      this.Load += new System.EventHandler(this.Form_AddUserIBAN_Load);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -123,7 +125,7 @@
     private System.Windows.Forms.Label label_IBAN;
     private System.Windows.Forms.TextBox textBox_Explanation;
     private System.Windows.Forms.TextBox textBox_IBAN;
-    private System.Windows.Forms.Button button_Save;
+    private System.Windows.Forms.Button button_PushToSheet;
     private System.Windows.Forms.Button button_Cancel;
   }
 }
