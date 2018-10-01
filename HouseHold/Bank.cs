@@ -34,11 +34,7 @@ namespace HouseHold
         dgv.Columns.Add(item.Value, item.Value);
       }
       data.ForEach(r => dgv.Rows.Add(r.ToArray()));
-      //foreach (var item in data)
-      //{
-      //  dgv.Rows.Add(item.ToArray());
-      //}
-
+      
       for (int i = 0; i < dgv.Columns.Count; i++)
       {
         if (i == 2 || i == 3) dgv.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

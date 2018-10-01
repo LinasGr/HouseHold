@@ -1,6 +1,6 @@
 ﻿namespace HouseHold
 {
-  partial class Form1
+  partial class Form_AddUserData
   {
     /// <summary>
     /// Required designer variable.
@@ -28,105 +28,89 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.label_SelectFile = new System.Windows.Forms.Label();
-      this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-      this.textBox_FileName = new System.Windows.Forms.TextBox();
-      this.button_BrowseFile = new System.Windows.Forms.Button();
-      this.dataGridView1 = new System.Windows.Forms.DataGridView();
-      this.button_PushToSheet = new System.Windows.Forms.Button();
-      this.progressBar_Push = new System.Windows.Forms.ProgressBar();
-      this.button_Setup = new System.Windows.Forms.Button();
-      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+      this.label_User = new System.Windows.Forms.Label();
+      this.label_Explanation = new System.Windows.Forms.Label();
+      this.label_IBAN = new System.Windows.Forms.Label();
+      this.textBox_Explanation = new System.Windows.Forms.TextBox();
+      this.textBox_IBAN = new System.Windows.Forms.TextBox();
+      this.button_Save = new System.Windows.Forms.Button();
+      this.button_Cancel = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
-      // label_SelectFile
+      // label_User
       // 
-      this.label_SelectFile.AutoSize = true;
-      this.label_SelectFile.Location = new System.Drawing.Point(9, 23);
-      this.label_SelectFile.Name = "label_SelectFile";
-      this.label_SelectFile.Size = new System.Drawing.Size(56, 13);
-      this.label_SelectFile.TabIndex = 0;
-      this.label_SelectFile.Text = "Select file:";
+      this.label_User.AutoSize = true;
+      this.label_User.Location = new System.Drawing.Point(238, 15);
+      this.label_User.Name = "label_User";
+      this.label_User.Size = new System.Drawing.Size(57, 13);
+      this.label_User.TabIndex = 0;
+      this.label_User.Text = "UserName";
       // 
-      // openFileDialog1
+      // label_Explanation
       // 
-      this.openFileDialog1.FileName = "1.csv";
-      this.openFileDialog1.Filter = "SwedBank|*.csv|SebBank|*.acc";
-      this.openFileDialog1.InitialDirectory = "\"E://\"";
+      this.label_Explanation.AutoSize = true;
+      this.label_Explanation.Location = new System.Drawing.Point(12, 54);
+      this.label_Explanation.Name = "label_Explanation";
+      this.label_Explanation.Size = new System.Drawing.Size(62, 13);
+      this.label_Explanation.TabIndex = 1;
+      this.label_Explanation.Text = "Explanation";
       // 
-      // textBox_FileName
+      // label_IBAN
       // 
-      this.textBox_FileName.Location = new System.Drawing.Point(81, 23);
-      this.textBox_FileName.Name = "textBox_FileName";
-      this.textBox_FileName.Size = new System.Drawing.Size(403, 20);
-      this.textBox_FileName.TabIndex = 1;
+      this.label_IBAN.AutoSize = true;
+      this.label_IBAN.Location = new System.Drawing.Point(42, 85);
+      this.label_IBAN.Name = "label_IBAN";
+      this.label_IBAN.Size = new System.Drawing.Size(32, 13);
+      this.label_IBAN.TabIndex = 2;
+      this.label_IBAN.Text = "IBAN";
       // 
-      // button_BrowseFile
+      // textBox_Explanation
       // 
-      this.button_BrowseFile.Location = new System.Drawing.Point(490, 20);
-      this.button_BrowseFile.Name = "button_BrowseFile";
-      this.button_BrowseFile.Size = new System.Drawing.Size(75, 23);
-      this.button_BrowseFile.TabIndex = 2;
-      this.button_BrowseFile.Text = "Browse file";
-      this.button_BrowseFile.UseVisualStyleBackColor = true;
-      this.button_BrowseFile.Click += new System.EventHandler(this.button_BrowseFile_Click);
+      this.textBox_Explanation.Location = new System.Drawing.Point(80, 51);
+      this.textBox_Explanation.Name = "textBox_Explanation";
+      this.textBox_Explanation.Size = new System.Drawing.Size(415, 20);
+      this.textBox_Explanation.TabIndex = 3;
       // 
-      // dataGridView1
+      // textBox_IBAN
       // 
-      this.dataGridView1.AllowUserToAddRows = false;
-      this.dataGridView1.AllowUserToResizeColumns = false;
-      this.dataGridView1.AllowUserToResizeRows = false;
-      this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-      this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.dataGridView1.Location = new System.Drawing.Point(12, 49);
-      this.dataGridView1.Name = "dataGridView1";
-      this.dataGridView1.Size = new System.Drawing.Size(894, 372);
-      this.dataGridView1.TabIndex = 3;
+      this.textBox_IBAN.Location = new System.Drawing.Point(80, 82);
+      this.textBox_IBAN.Name = "textBox_IBAN";
+      this.textBox_IBAN.Size = new System.Drawing.Size(415, 20);
+      this.textBox_IBAN.TabIndex = 4;
       // 
-      // button_PushToSheet
+      // button_Save
       // 
-      this.button_PushToSheet.Location = new System.Drawing.Point(571, 20);
-      this.button_PushToSheet.Name = "button_PushToSheet";
-      this.button_PushToSheet.Size = new System.Drawing.Size(97, 23);
-      this.button_PushToSheet.TabIndex = 4;
-      this.button_PushToSheet.Text = "Push to Sheet";
-      this.button_PushToSheet.UseVisualStyleBackColor = true;
-      this.button_PushToSheet.Click += new System.EventHandler(this.button_PushToSheet_Click);
+      this.button_Save.Location = new System.Drawing.Point(189, 126);
+      this.button_Save.Name = "button_Save";
+      this.button_Save.Size = new System.Drawing.Size(75, 23);
+      this.button_Save.TabIndex = 5;
+      this.button_Save.Text = "Save";
+      this.button_Save.UseVisualStyleBackColor = true;
+      this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
       // 
-      // progressBar_Push
+      // button_Cancel
       // 
-      this.progressBar_Push.Location = new System.Drawing.Point(674, 20);
-      this.progressBar_Push.Name = "progressBar_Push";
-      this.progressBar_Push.Size = new System.Drawing.Size(129, 23);
-      this.progressBar_Push.TabIndex = 5;
+      this.button_Cancel.Location = new System.Drawing.Point(270, 126);
+      this.button_Cancel.Name = "button_Cancel";
+      this.button_Cancel.Size = new System.Drawing.Size(75, 23);
+      this.button_Cancel.TabIndex = 6;
+      this.button_Cancel.Text = "Cancel";
+      this.button_Cancel.UseVisualStyleBackColor = true;
       // 
-      // button_Setup
-      // 
-      this.button_Setup.Location = new System.Drawing.Point(809, 20);
-      this.button_Setup.Name = "button_Setup";
-      this.button_Setup.Size = new System.Drawing.Size(97, 23);
-      this.button_Setup.TabIndex = 6;
-      this.button_Setup.Text = "Setup";
-      this.button_Setup.UseVisualStyleBackColor = true;
-      this.button_Setup.Click += new System.EventHandler(this.button_Setup_Click);
-      // 
-      // Form1
+      // Form_AddUserData
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(918, 433);
-      this.Controls.Add(this.button_Setup);
-      this.Controls.Add(this.progressBar_Push);
-      this.Controls.Add(this.button_PushToSheet);
-      this.Controls.Add(this.dataGridView1);
-      this.Controls.Add(this.button_BrowseFile);
-      this.Controls.Add(this.textBox_FileName);
-      this.Controls.Add(this.label_SelectFile);
-      this.Name = "Form1";
-      this.Text = "HouseHold";
-      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+      this.ClientSize = new System.Drawing.Size(535, 189);
+      this.Controls.Add(this.button_Cancel);
+      this.Controls.Add(this.button_Save);
+      this.Controls.Add(this.textBox_IBAN);
+      this.Controls.Add(this.textBox_Explanation);
+      this.Controls.Add(this.label_IBAN);
+      this.Controls.Add(this.label_Explanation);
+      this.Controls.Add(this.label_User);
+      this.Name = "Form_AddUserData";
+      this.Text = "HouseHold Add user data";
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -134,14 +118,12 @@
 
     #endregion
 
-    private System.Windows.Forms.Label label_SelectFile;
-    private System.Windows.Forms.OpenFileDialog openFileDialog1;
-    private System.Windows.Forms.TextBox textBox_FileName;
-    private System.Windows.Forms.Button button_BrowseFile;
-    private System.Windows.Forms.DataGridView dataGridView1;
-    private System.Windows.Forms.Button button_PushToSheet;
-    private System.Windows.Forms.ProgressBar progressBar_Push;
-    private System.Windows.Forms.Button button_Setup;
+    private System.Windows.Forms.Label label_User;
+    private System.Windows.Forms.Label label_Explanation;
+    private System.Windows.Forms.Label label_IBAN;
+    private System.Windows.Forms.TextBox textBox_Explanation;
+    private System.Windows.Forms.TextBox textBox_IBAN;
+    private System.Windows.Forms.Button button_Save;
+    private System.Windows.Forms.Button button_Cancel;
   }
 }
-
