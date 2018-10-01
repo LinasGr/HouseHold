@@ -73,7 +73,7 @@ namespace HouseHold
     {
       if (settings.data.ContainsKey("SheetID"))
         this.textBox_SheetID.Text = settings.data["SheetID"];
-      if (settings.data["Name"] != null)
+      if (settings.data.ContainsKey("Name"))
         textBox_Name.Text = settings.data["Name"];
     }
 

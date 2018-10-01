@@ -105,11 +105,11 @@
     <Compile Include="Bank.cs" />
     <Compile Include="ACCReader.cs" />
     <Compile Include="CSVReader.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Form_AddUserData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form_AddUserData.Designer.cs">
+      <DependentUpon>Form_AddUserData.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_AddBankData.cs">
       <SubType>Form</SubType>
@@ -134,8 +134,8 @@
     <Compile Include="SebBank.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SwedBank.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Form_AddUserData.resx">
+      <DependentUpon>Form_AddUserData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AddBankData.resx">
       <DependentUpon>Form_AddBankData.cs</DependentUpon>
