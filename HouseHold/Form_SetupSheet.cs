@@ -1,47 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using System.Text.RegularExpressions;
+using SheetTools;
 
 namespace HouseHold
 {
-  public partial class Form_SetupSheet : Form
+  public partial class FormSetupSheet : Form
   {
-    private Settings settings = new Settings(Application.StartupPath);
+    private Settings _settings = new Settings(Application.StartupPath);
 
-    public Form_SetupSheet()
+    public FormSetupSheet()
     {
       InitializeComponent();
     }
 
-    private void button_OK_Click(object sender, EventArgs e)
+    private void Button_OK_Click(object sender, EventArgs e)
     {
-      this.SheetIDRegex(sender, e);
+      SheetIdRegex(sender, e);
       if (textBox_Name.Text.Length > 0)
-        if (settings.data.ContainsKey("Name")) settings.data["Name"] = textBox_Name.Text;
-        else settings.data.Add("Name",textBox_Name.Text);
+        if (_settings.Data.ContainsKey("Name")) _settings.Data["Name"] = textBox_Name.Text;
+        else _settings.Data.Add("Name",textBox_Name.Text);
       if (textBox_SheetID.Text.Length > 0)
-        if (settings.data.ContainsKey("SheetID")) settings.data["SheetID"] = textBox_SheetID.Text;
-        else settings.data.Add("SheetID",textBox_SheetID.Text);
-      settings.SaveData();
-      this.Close();
+        if (_settings.Data.ContainsKey("SheetID")) _settings.Data["SheetID"] = textBox_SheetID.Text;
+        else _settings.Data.Add("SheetID",textBox_SheetID.Text);
+      _settings.SaveData();
+      Close();
     }
 
-    private void button_Cancel_Click(object sender, EventArgs e)
+    private void Button_Cancel_Click(object sender, EventArgs e)
     {
-      this.Close();
+      Close();
     }
 
     private void UserDataLoad(DataGridView dgv)
     {
-      var sheetUsers = new SheetTools.GoogleSheet(this.textBox_SheetID.Text, "Users");
+      var sheetUsers = new GoogleSheet(textBox_SheetID.Text, "Users");
       sheetUsers.ReadCellsData("A2:F");
       dgv.Columns.Clear();
       dgv.Rows.Clear();
@@ -61,33 +55,33 @@ namespace HouseHold
       }
     }
 
-    private void button_Save_Click(object sender, EventArgs e)
+    private void Button_Save_Click(object sender, EventArgs e)
     {
-      this.UserDataLoad(this.dataGridView_Setup);
+      UserDataLoad(dataGridView_Setup);
     }
 
-    private void dataGridView_Setup_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    private void DataGridView_Setup_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
-      if (this.Name.Length > 0 && this.textBox_SheetID.Text.Length > 0)
+      if (Name.Length > 0 && textBox_SheetID.Text.Length > 0)
       {
-        this.UserDataLoad(this.dataGridView_Setup);
+        UserDataLoad(dataGridView_Setup);
       }
     }
 
     private void Form_SetupSheet_Load(object sender, EventArgs e)
     {
-      if (settings.data.ContainsKey("SheetID"))
-        this.textBox_SheetID.Text = settings.data["SheetID"];
-      if (settings.data.ContainsKey("Name"))
-        textBox_Name.Text = settings.data["Name"];
+      if (_settings.Data.ContainsKey("SheetID"))
+        textBox_SheetID.Text = _settings.Data["SheetID"];
+      if (_settings.Data.ContainsKey("Name"))
+        textBox_Name.Text = _settings.Data["Name"];
     }
 
-    private void SheetIDRegex(object sender, EventArgs e)
+    private void SheetIdRegex(object sender, EventArgs e)
     {
-      if (this.textBox_SheetID.Text.Length > 0)
+      if (textBox_SheetID.Text.Length > 0)
       {
         Match rMatch = Regex.Match(textBox_SheetID.Text, @"/spreadsheets/d/([a-zA-Z0-9-_]+)", RegexOptions.IgnoreCase);
-        if (rMatch.Success) this.textBox_SheetID.Text = rMatch.Groups[0].Value.Substring(16);
+        if (rMatch.Success) textBox_SheetID.Text = rMatch.Groups[0].Value.Substring(16);
       }
     }
   }

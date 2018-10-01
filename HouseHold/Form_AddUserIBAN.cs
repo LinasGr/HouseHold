@@ -1,21 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HouseHold
 {
-  public partial class Form_AddUserIBAN : Form
+  public partial class FormAddUserIban : Form
   {
 
-    private Settings settings = new Settings(Application.StartupPath);
+    private Settings _settings = new Settings(Application.StartupPath);
 
-    public Form_AddUserIBAN()
+    public FormAddUserIban()
     {
       InitializeComponent();
     }
@@ -24,29 +18,29 @@ namespace HouseHold
 
     private void Form_AddUserIBAN_Load(object sender, EventArgs e)
     {
-      if (!this.settings.data.ContainsKey("SheetID"))
+      if (!_settings.Data.ContainsKey("SheetID"))
       {
         MessageBox.Show(this, "No SheetID selected!\nPlease go to Setup Sheet.", "Error", MessageBoxButtons.OK);
-        this.Close();
+        Close();
       }
-      if (!settings.data.ContainsKey("Name"))
+      if (!_settings.Data.ContainsKey("Name"))
       {
         MessageBox.Show(this, "No use Name selected!\nPlease go to Setup Sheet.", "Error", MessageBoxButtons.OK);
-        this.Close();
+        Close();
       }
-      this.label_User.Text = this.settings.data["Name"];
+      label_User.Text = _settings.Data["Name"];
     }
 
-    private void button_Cancel_Click(object sender, EventArgs e)
+    private void Button_Cancel_Click(object sender, EventArgs e)
     {
-      this.Close();
+      Close();
     }
 
-    private void button_PushToSheet_Click(object sender, EventArgs e)
+    private void Button_PushToSheet_Click(object sender, EventArgs e)
     {
-      if (this.textBox_IBAN.Text.Length > 0)
+      if (textBox_IBAN.Text.Length > 0)
       {
-        var sheet = new SheetTools.GoogleSheet(settings.data["SheetID"], "Users");
+        var sheet = new SheetTools.GoogleSheet(_settings.Data["SheetID"], "Users");
         sheet.ReadCellsData("A3:F");
         var col = new string[6];
         bool rawExist = false;
@@ -63,7 +57,7 @@ namespace HouseHold
             }
         }
         else rowsCount = 3;
-        col[0] = settings.data["Name"];
+        col[0] = _settings.Data["Name"];
         col[1] = textBox_Explanation.Text;
         col[2] = textBox_IBAN.Text;
         col[3] = $"=F{rowsCount}-E{rowsCount}";

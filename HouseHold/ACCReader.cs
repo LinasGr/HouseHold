@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace HouseHold
 {
-  class ACCReader
+  class AccReader
   {
-    public string[] lines { get; }
-    public string[] columns { get; }
-    public List<List<Object>> data { get; }
+    public string[] Lines { get; }
+    public string[] Columns { get; }
+    public List<List<Object>> Data { get; }
 
-    public ACCReader(string fileName)
+    public AccReader(string fileName)
     {
       string[] text = File.ReadAllLines(fileName, Encoding.GetEncoding(1257));
-      lines = new string[text.Length - 1];
-      if (text.Length > 0) columns = SplitLine(text[0]);
-      if (text.Length > 1) lines = text.Skip(1).ToArray();
+      Lines = new string[text.Length - 1];
+      if (text.Length > 0) Columns = SplitLine(text[0]);
+      if (text.Length > 1) Lines = text.Skip(1).ToArray();
       
-      data = lines.Select(l => SplitLine(l).ToList<object>()).ToList();
+      Data = Lines.Select(l => SplitLine(l).ToList<object>()).ToList();
     }
 
     public string[] SplitLine(string line) => line.Split('\t').ToArray();

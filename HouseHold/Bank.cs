@@ -1,39 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace HouseHold
 {
   abstract class Bank
   {
-    public Dictionary<int, string> columns { get; }
-    public List<List<object>> data { get; set; }
+    public Dictionary<int, string> Columns { get; }
+    public List<List<object>> Data { get; set; }
 
     public Bank()
     {
-      columns = new Dictionary<int, string>();
-      columns.Add(1, "IBAN");
-      columns.Add(2, "Date");
-      columns.Add(3, "Recipient");
-      columns.Add(4, "Explanation");
-      columns.Add(5, "Amount");
-      columns.Add(6, "Currency");
-      columns.Add(7, "D/K");
+      Columns = new Dictionary<int, string>
+      {
+        { 1, "IBAN" },
+        { 2, "Date" },
+        { 3, "Recipient" },
+        { 4, "Explanation" },
+        { 5, "Amount" },
+        { 6, "Currency" },
+        { 7, "D/K" }
+      };
     }
-    abstract public void ReadFileData(string fileName);
+    public abstract void ReadFileData(string fileName);
     public void FillDataGridView(DataGridView dgv)
     {
       dgv.Columns.Clear();
       dgv.Rows.Clear();
 
-      foreach (var item in columns)
+      foreach (var item in Columns)
       {
         dgv.Columns.Add(item.Value, item.Value);
       }
-      data.ForEach(r => dgv.Rows.Add(r.ToArray()));
+      Data.ForEach(r => dgv.Rows.Add(r.ToArray()));
       
       for (int i = 0; i < dgv.Columns.Count; i++)
       {

@@ -1,6 +1,6 @@
 ﻿namespace HouseHold
 {
-  partial class Form_AddBankData
+  partial class FormAddBankData
   {
     /// <summary>
     /// Required designer variable.
@@ -35,6 +35,7 @@
       this.dataGridView1 = new System.Windows.Forms.DataGridView();
       this.button_PushToSheet = new System.Windows.Forms.Button();
       this.progressBar_Push = new System.Windows.Forms.ProgressBar();
+      this.button_Cancel = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
@@ -68,7 +69,7 @@
       this.button_BrowseFile.TabIndex = 2;
       this.button_BrowseFile.Text = "Browse file";
       this.button_BrowseFile.UseVisualStyleBackColor = true;
-      this.button_BrowseFile.Click += new System.EventHandler(this.button_BrowseFile_Click);
+      this.button_BrowseFile.Click += new System.EventHandler(this.Button_BrowseFile_Click);
       // 
       // dataGridView1
       // 
@@ -92,7 +93,7 @@
       this.button_PushToSheet.TabIndex = 4;
       this.button_PushToSheet.Text = "Push to Sheet";
       this.button_PushToSheet.UseVisualStyleBackColor = true;
-      this.button_PushToSheet.Click += new System.EventHandler(this.button_PushToSheet_Click);
+      this.button_PushToSheet.Click += new System.EventHandler(this.Button_PushToSheet_Click);
       // 
       // progressBar_Push
       // 
@@ -101,18 +102,30 @@
       this.progressBar_Push.Size = new System.Drawing.Size(129, 23);
       this.progressBar_Push.TabIndex = 5;
       // 
+      // button_Cancel
+      // 
+      this.button_Cancel.Location = new System.Drawing.Point(809, 20);
+      this.button_Cancel.Name = "button_Cancel";
+      this.button_Cancel.Size = new System.Drawing.Size(97, 23);
+      this.button_Cancel.TabIndex = 6;
+      this.button_Cancel.Text = "Cancel";
+      this.button_Cancel.UseVisualStyleBackColor = true;
+      this.button_Cancel.Click += new System.EventHandler(this.Button_Cancel_Click);
+      // 
       // Form_AddBankData
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(918, 433);
+      this.Controls.Add(this.button_Cancel);
       this.Controls.Add(this.progressBar_Push);
       this.Controls.Add(this.button_PushToSheet);
       this.Controls.Add(this.dataGridView1);
       this.Controls.Add(this.button_BrowseFile);
       this.Controls.Add(this.textBox_FileName);
       this.Controls.Add(this.label_SelectFile);
-      this.Name = "Form_AddBankData";
+      this.Name = "FormAddBankData";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "HouseHold";
       this.Load += new System.EventHandler(this.Form_AddBankData_Load);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -130,6 +143,7 @@
     private System.Windows.Forms.DataGridView dataGridView1;
     private System.Windows.Forms.Button button_PushToSheet;
     private System.Windows.Forms.ProgressBar progressBar_Push;
+    private System.Windows.Forms.Button button_Cancel;
   }
 }
 

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HouseHold
@@ -16,7 +13,7 @@ namespace HouseHold
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new Form_Menu());
+      Application.Run(new FormMenu());
 
     }
   }

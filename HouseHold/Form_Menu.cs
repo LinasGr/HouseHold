@@ -1,41 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HouseHold
 {
-  public partial class Form_Menu : Form
+  public partial class FormMenu : Form
   {
-    public Form_Menu()
+    public FormMenu()
     {
       InitializeComponent();
     }
 
-    private void button_SetupSheet_Click(object sender, EventArgs e)
+    private void Button_SetupSheet_Click(object sender, EventArgs e)
     {
-      var setupSheet = new Form_SetupSheet();
-      this.ActivateMdiChild(setupSheet);
+      var setupSheet = new FormSetupSheet();
+      ActivateMdiChild(setupSheet);
       setupSheet.ShowDialog();
     }
 
-    private void button_AddBankData_Click(object sender, EventArgs e)
+    private void Button_AddBankData_Click(object sender, EventArgs e)
     {
-      var AddBankData = new Form_AddBankData();
-      this.ActivateMdiChild(AddBankData);
-      AddBankData.ShowDialog();
+      var addBankData = new FormAddBankData();
+      //this.ActivateMdiChild(AddBankData);
+      //AddBankData.Location=new Point(200, 0);
+      //this.Controls.Add(AddBankData);
+      //AddBankData.StartPosition = FormStartPosition.CenterParent;
+      addBankData.ShowDialog();
     }
 
-    private void button_AddUserIBAN_Click(object sender, EventArgs e)
+    private void Button_AddUserIBAN_Click(object sender, EventArgs e)
     {
-      var AddUserData = new Form_AddUserIBAN();
-      this.ActivateMdiChild(AddUserData);
-      AddUserData.ShowDialog();
+      var addUserData = new FormAddUserIban();
+      ActivateMdiChild(addUserData);
+      addUserData.ShowDialog();
+    }
+
+    private void Button_GetYourData_Click(object sender, EventArgs e)
+    {
+      var getYourData=new FormGetYourData();
+      getYourData.ShowDialog();
     }
   }
 }

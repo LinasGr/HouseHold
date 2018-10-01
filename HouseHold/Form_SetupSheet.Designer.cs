@@ -1,6 +1,6 @@
 ﻿namespace HouseHold
 {
-  partial class Form_SetupSheet
+  partial class FormSetupSheet
   {
     /// <summary>
     /// Required designer variable.
@@ -64,7 +64,7 @@
       this.textBox_SheetID.Name = "textBox_SheetID";
       this.textBox_SheetID.Size = new System.Drawing.Size(511, 20);
       this.textBox_SheetID.TabIndex = 3;
-      this.textBox_SheetID.TextChanged += new System.EventHandler(this.SheetIDRegex);
+      this.textBox_SheetID.TextChanged += new System.EventHandler(this.SheetIdRegex);
       // 
       // label_SheetID
       // 
@@ -83,7 +83,7 @@
       this.button_OK.TabIndex = 4;
       this.button_OK.Text = "OK";
       this.button_OK.UseVisualStyleBackColor = true;
-      this.button_OK.Click += new System.EventHandler(this.button_OK_Click);
+      this.button_OK.Click += new System.EventHandler(this.Button_OK_Click);
       // 
       // button_Cancel
       // 
@@ -93,7 +93,7 @@
       this.button_Cancel.TabIndex = 5;
       this.button_Cancel.Text = "Cancel";
       this.button_Cancel.UseVisualStyleBackColor = true;
-      this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
+      this.button_Cancel.Click += new System.EventHandler(this.Button_Cancel_Click);
       // 
       // button_Load
       // 
@@ -103,7 +103,7 @@
       this.button_Load.TabIndex = 6;
       this.button_Load.Text = "Load data";
       this.button_Load.UseVisualStyleBackColor = true;
-      this.button_Load.Click += new System.EventHandler(this.button_Save_Click);
+      this.button_Load.Click += new System.EventHandler(this.Button_Save_Click);
       // 
       // dataGridView_Setup
       // 
@@ -118,7 +118,7 @@
       this.dataGridView_Setup.ReadOnly = true;
       this.dataGridView_Setup.Size = new System.Drawing.Size(511, 144);
       this.dataGridView_Setup.TabIndex = 7;
-      this.dataGridView_Setup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Setup_CellContentClick);
+      this.dataGridView_Setup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_Setup_CellContentClick);
       // 
       // label1
       // 
@@ -144,7 +144,8 @@
       this.Controls.Add(this.label_SheetID);
       this.Controls.Add(this.textBox_Name);
       this.Controls.Add(this.label_Name);
-      this.Name = "Form_SetupSheet";
+      this.Name = "FormSetupSheet";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "HouseHold sheet setup";
       this.Load += new System.EventHandler(this.Form_SetupSheet_Load);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Setup)).EndInit();

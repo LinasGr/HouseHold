@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace HouseHold
@@ -12,25 +9,26 @@ namespace HouseHold
   /// </summary>
   class Settings
   {
-    private string fileName;
-    public Dictionary<string,string> data;
+    private string _fileName;
+    public Dictionary<string, string> Data;
 
     public Settings(string path)
     {
-      this.data = new Dictionary<string, string>();
-      this.fileName = path + "\\Setup.txt";
-      if (File.Exists(this.fileName)) this.LoadData();
-      else File.Create(this.fileName);
+      Data = new Dictionary<string, string>();
+      _fileName = path + "\\Setup.txt";
+      if (File.Exists(_fileName)) LoadData();
+      else File.Create(_fileName);
     }
 
     public void LoadData()
     {
-      List<string> lines = File.ReadAllLines(this.fileName).ToList();
-      lines.ForEach(x=>data.Add(x.Split(':')[0].ToString(),x.Split(':')[1].ToString()));
+      List<string> lines = File.ReadAllLines(_fileName).ToList();
+      if (lines.Count > 0)
+        lines.ForEach(x => Data.Add(x.Split(':')[0].ToString(), x.Split(':')[1].ToString()));
     }
     public void SaveData()
     {
-      File.WriteAllLines(this.fileName, data.Select(x=>x.Key+":"+x.Value));
+      File.WriteAllLines(_fileName, Data.Select(x => x.Key + ":" + x.Value));
     }
   }
 }
