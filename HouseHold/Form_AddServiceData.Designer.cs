@@ -61,6 +61,7 @@
       this.dateTimePicker1.Name = "dateTimePicker1";
       this.dateTimePicker1.Size = new System.Drawing.Size(150, 20);
       this.dateTimePicker1.TabIndex = 1;
+      this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
       // 
       // label_Service
       // 
@@ -115,6 +116,7 @@
       this.button_PushToSheet.TabIndex = 10;
       this.button_PushToSheet.Text = "Push to sheet";
       this.button_PushToSheet.UseVisualStyleBackColor = true;
+      this.button_PushToSheet.Click += new System.EventHandler(this.button_PushToSheet_Click);
       // 
       // button_Close
       // 
@@ -202,7 +204,6 @@
       this.Name = "Form_AddServiceData";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "HouseHold Add Service Data";
-      this.Load += new System.EventHandler(this.Form_AddServiceData_Load);
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_DayCounter)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_NiteCounter)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SingleCounter)).EndInit();

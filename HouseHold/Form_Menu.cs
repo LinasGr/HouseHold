@@ -32,8 +32,9 @@ namespace HouseHold
 
     private void Button_AddUserIBAN_Click(object sender, EventArgs e)
     {
-
+      this.Enabled = false;
       var addUserData = new FormAddUserIban();
+      this.Hide();
       addUserData.ShowDialog();
       this.Show();
       this.Enabled = true;
@@ -41,8 +42,12 @@ namespace HouseHold
 
     private void Button_GetYourData_Click(object sender, EventArgs e)
     {
+      this.Enabled = false;
       var getYourData=new FormGetYourData();
+      this.Hide();
       getYourData.ShowDialog();
+      this.Show();
+      this.Enabled = true;
     }
 
     private void button_AddServiceData_Click(object sender, EventArgs e)

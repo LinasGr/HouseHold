@@ -16,11 +16,13 @@ namespace HouseHold
     private Settings settings = new Settings(Application.StartupPath);
     private GoogleSheet sheetLists;
     private GoogleSheet sheetServices;
+    private int rowIndex;
 
     public Form_AddServiceData()
     {
       InitializeComponent();
-     
+      initData();
+      rowIndex = -1;
     }
 
     public void initData()
@@ -38,10 +40,6 @@ namespace HouseHold
       dateTimePicker1.Value = DateTime.Now;
     }
 
-    private void Form_AddServiceData_Load(object sender, EventArgs e)
-    {
-      
-    }
 
     private void button_Close_Click(object sender, EventArgs e)
     {
@@ -50,20 +48,56 @@ namespace HouseHold
 
     private void FindeService()
     {
+      numericUpDown_DayCounter.Value = 0;
+      numericUpDown_NiteCounter.Value = 0;
+      numericUpDown_SingleCounter.Value = 0;
       IList<object> raw;
-      raw=sheetServices.values.Values.FirstOrDefault(x => x[1].ToString() == dateTimePicker1.Value.ToString("yyyy.MM.dd") &&
-                                           x[0].ToString()==comboBox_Services.Text);
-      if (raw!=null)
+      raw = sheetServices.values.Values.FirstOrDefault(x => x[1].ToString() == dateTimePicker1.Value.ToString("yyyy.MM.dd") &&
+                                             x[0].ToString() == comboBox_Services.Text);
+      if (raw != null)
       {
         numericUpDown_DayCounter.Value = int.Parse(raw[2].ToString());
         numericUpDown_NiteCounter.Value = int.Parse(raw[3].ToString());
         numericUpDown_SingleCounter.Value = int.Parse(raw[4].ToString());
+        rowIndex = sheetServices.values.Values.IndexOf(raw);
       }
+      else rowIndex = -1;
     }
 
     private void comboBox_Services_SelectedIndexChanged(object sender, EventArgs e)
     {
       FindeService();
+    }
+
+    private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+    {
+      FindeService();
+    }
+
+    private void button_PushToSheet_Click(object sender, EventArgs e)
+    {
+      if (comboBox_Services.Text.Length == 0) return;
+      if (rowIndex > -1)
+      {
+        for (int i = sheetServices.values.Values.Count - 1; i > -1; i--)
+          if (i != rowIndex) sheetServices.values.Values.RemoveAt(i);
+        sheetServices.values.Values[0][2] = numericUpDown_DayCounter.Value;
+        sheetServices.values.Values[0][3] = numericUpDown_NiteCounter.Value;
+        sheetServices.values.Values[0][4] = numericUpDown_SingleCounter.Value;
+        sheetServices.UpdateCellsData($"A{rowIndex + 3}:E{rowIndex + 3}");
+      }
+      else
+      {
+        sheetServices.ClearValues();
+        sheetServices.CreateValuesLine(new string[5]{
+          comboBox_Services.Text,
+          dateTimePicker1.Value.ToString("yyy.MM.dd"),
+          numericUpDown_DayCounter.Value.ToString(),
+          numericUpDown_NiteCounter.Value.ToString(),
+          numericUpDown_SingleCounter.Value.ToString() });
+        sheetServices.AppentCellsAtEnd("A3:E");
+      }
+      sheetServices.ReadCellsData("A3:E");
     }
   }
 }
