@@ -32,6 +32,7 @@
       this.button_SetupSheet = new System.Windows.Forms.Button();
       this.button_AddUserData = new System.Windows.Forms.Button();
       this.button_GetYourData = new System.Windows.Forms.Button();
+      this.button_AddServiceData = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // button_AddBankData
@@ -66,7 +67,7 @@
       // 
       // button_GetYourData
       // 
-      this.button_GetYourData.Location = new System.Drawing.Point(62, 112);
+      this.button_GetYourData.Location = new System.Drawing.Point(62, 141);
       this.button_GetYourData.Name = "button_GetYourData";
       this.button_GetYourData.Size = new System.Drawing.Size(150, 23);
       this.button_GetYourData.TabIndex = 3;
@@ -74,11 +75,22 @@
       this.button_GetYourData.UseVisualStyleBackColor = true;
       this.button_GetYourData.Click += new System.EventHandler(this.Button_GetYourData_Click);
       // 
-      // Form_Menu
+      // button_AddServiceData
+      // 
+      this.button_AddServiceData.Location = new System.Drawing.Point(62, 112);
+      this.button_AddServiceData.Name = "button_AddServiceData";
+      this.button_AddServiceData.Size = new System.Drawing.Size(150, 23);
+      this.button_AddServiceData.TabIndex = 4;
+      this.button_AddServiceData.Text = "Add Service Data";
+      this.button_AddServiceData.UseVisualStyleBackColor = true;
+      this.button_AddServiceData.Click += new System.EventHandler(this.button_AddServiceData_Click);
+      // 
+      // FormMenu
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(280, 191);
+      this.Controls.Add(this.button_AddServiceData);
       this.Controls.Add(this.button_GetYourData);
       this.Controls.Add(this.button_AddUserData);
       this.Controls.Add(this.button_SetupSheet);
@@ -96,5 +108,6 @@
     private System.Windows.Forms.Button button_SetupSheet;
     private System.Windows.Forms.Button button_AddUserData;
     private System.Windows.Forms.Button button_GetYourData;
+    private System.Windows.Forms.Button button_AddServiceData;
   }
 }

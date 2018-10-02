@@ -12,32 +12,52 @@ namespace HouseHold
 
     private void Button_SetupSheet_Click(object sender, EventArgs e)
     {
+      this.Enabled = false;
       var setupSheet = new FormSetupSheet();
-      ActivateMdiChild(setupSheet);
+      this.Hide();
       setupSheet.ShowDialog();
+      this.Show();
+      this.Enabled = true;
     }
 
     private void Button_AddBankData_Click(object sender, EventArgs e)
     {
+      this.Enabled = false;
       var addBankData = new FormAddBankData();
-      //this.ActivateMdiChild(AddBankData);
-      //AddBankData.Location=new Point(200, 0);
-      //this.Controls.Add(AddBankData);
-      //AddBankData.StartPosition = FormStartPosition.CenterParent;
+      this.Hide();
       addBankData.ShowDialog();
+      this.Show();
+      this.Enabled = true;
     }
 
     private void Button_AddUserIBAN_Click(object sender, EventArgs e)
     {
+
       var addUserData = new FormAddUserIban();
-      ActivateMdiChild(addUserData);
       addUserData.ShowDialog();
+      this.Show();
+      this.Enabled = true;
     }
 
     private void Button_GetYourData_Click(object sender, EventArgs e)
     {
       var getYourData=new FormGetYourData();
       getYourData.ShowDialog();
+    }
+
+    private void button_AddServiceData_Click(object sender, EventArgs e)
+    {
+      this.Enabled = false;
+      var addServiceData=new Form_AddServiceData();
+      this.Hide();
+      addServiceData.ShowDialog();
+      this.Enabled = true;
+      this.Show();
+    }
+
+    void openDialog(string toOpen)
+    {
+
     }
   }
 }

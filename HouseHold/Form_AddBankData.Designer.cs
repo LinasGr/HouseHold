@@ -108,11 +108,11 @@
       this.button_Cancel.Name = "button_Cancel";
       this.button_Cancel.Size = new System.Drawing.Size(97, 23);
       this.button_Cancel.TabIndex = 6;
-      this.button_Cancel.Text = "Cancel";
+      this.button_Cancel.Text = "Close";
       this.button_Cancel.UseVisualStyleBackColor = true;
       this.button_Cancel.Click += new System.EventHandler(this.Button_Cancel_Click);
       // 
-      // Form_AddBankData
+      // FormAddBankData
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
