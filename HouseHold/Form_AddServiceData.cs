@@ -21,6 +21,7 @@ namespace HouseHold
     public Form_AddServiceData()
     {
       InitializeComponent();
+      FormBorderStyle = FormBorderStyle.FixedSingle;
       initData();
       rowIndex = -1;
     }
@@ -40,7 +41,6 @@ namespace HouseHold
       dateTimePicker1.Value = DateTime.Now;
     }
 
-
     private void button_Close_Click(object sender, EventArgs e)
     {
       Close();
@@ -52,6 +52,7 @@ namespace HouseHold
       numericUpDown_NiteCounter.Value = 0;
       numericUpDown_SingleCounter.Value = 0;
       IList<object> raw;
+      sheetServices.ReadCellsData("A3:E");
       raw = sheetServices.values.Values.FirstOrDefault(x => x[1].ToString() == dateTimePicker1.Value.ToString("yyyy.MM.dd") &&
                                              x[0].ToString() == comboBox_Services.Text);
       if (raw != null)
@@ -98,6 +99,30 @@ namespace HouseHold
         sheetServices.AppentCellsAtEnd("A3:E");
       }
       sheetServices.ReadCellsData("A3:E");
+    }
+
+
+
+    private void FindeLastServiceData()
+    {
+      IList<object> raw;
+      sheetServices.ReadCellsData("A3:E");
+      raw = sheetServices.values.Values.OrderByDescending(d => d[1].ToString())
+        .FirstOrDefault(s => s[0].ToString() == comboBox_Services.Text);
+      if (raw != null)
+      {
+        numericUpDown_DayCounter.Value = int.Parse(raw[2].ToString());
+        numericUpDown_NiteCounter.Value = int.Parse(raw[3].ToString());
+        numericUpDown_SingleCounter.Value = int.Parse(raw[4].ToString());
+      }
+      else
+        MessageBox.Show("No data for this service found.");
+    }
+
+    private void button_LoadLastServiceData_Click(object sender, EventArgs e)
+    {
+      if (comboBox_Services.Text.Length > 0)
+        FindeLastServiceData();
     }
   }
 }

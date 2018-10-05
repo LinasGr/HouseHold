@@ -80,22 +80,24 @@
       // 
       // button_PushToSheet
       // 
+      this.button_PushToSheet.BackColor = System.Drawing.Color.Yellow;
       this.button_PushToSheet.Location = new System.Drawing.Point(159, 127);
       this.button_PushToSheet.Name = "button_PushToSheet";
       this.button_PushToSheet.Size = new System.Drawing.Size(100, 23);
       this.button_PushToSheet.TabIndex = 5;
       this.button_PushToSheet.Text = "Push to sheet";
-      this.button_PushToSheet.UseVisualStyleBackColor = true;
+      this.button_PushToSheet.UseVisualStyleBackColor = false;
       this.button_PushToSheet.Click += new System.EventHandler(this.Button_PushToSheet_Click);
       // 
       // button_Cancel
       // 
+      this.button_Cancel.BackColor = System.Drawing.Color.Lime;
       this.button_Cancel.Location = new System.Drawing.Point(265, 127);
       this.button_Cancel.Name = "button_Cancel";
       this.button_Cancel.Size = new System.Drawing.Size(100, 23);
       this.button_Cancel.TabIndex = 6;
       this.button_Cancel.Text = "Close";
-      this.button_Cancel.UseVisualStyleBackColor = true;
+      this.button_Cancel.UseVisualStyleBackColor = false;
       this.button_Cancel.Click += new System.EventHandler(this.Button_Cancel_Click);
       // 
       // FormAddUserIban
@@ -110,6 +112,8 @@
       this.Controls.Add(this.label_IBAN);
       this.Controls.Add(this.label_Explanation);
       this.Controls.Add(this.label_User);
+      this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Name = "FormAddUserIban";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "HouseHold Add user IBAN";

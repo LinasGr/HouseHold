@@ -63,12 +63,13 @@
       // 
       // button_BrowseFile
       // 
+      this.button_BrowseFile.BackColor = System.Drawing.Color.Lime;
       this.button_BrowseFile.Location = new System.Drawing.Point(490, 20);
       this.button_BrowseFile.Name = "button_BrowseFile";
       this.button_BrowseFile.Size = new System.Drawing.Size(75, 23);
       this.button_BrowseFile.TabIndex = 2;
       this.button_BrowseFile.Text = "Browse file";
-      this.button_BrowseFile.UseVisualStyleBackColor = true;
+      this.button_BrowseFile.UseVisualStyleBackColor = false;
       this.button_BrowseFile.Click += new System.EventHandler(this.Button_BrowseFile_Click);
       // 
       // dataGridView1
@@ -87,12 +88,13 @@
       // 
       // button_PushToSheet
       // 
+      this.button_PushToSheet.BackColor = System.Drawing.Color.Yellow;
       this.button_PushToSheet.Location = new System.Drawing.Point(571, 20);
       this.button_PushToSheet.Name = "button_PushToSheet";
       this.button_PushToSheet.Size = new System.Drawing.Size(97, 23);
       this.button_PushToSheet.TabIndex = 4;
       this.button_PushToSheet.Text = "Push to Sheet";
-      this.button_PushToSheet.UseVisualStyleBackColor = true;
+      this.button_PushToSheet.UseVisualStyleBackColor = false;
       this.button_PushToSheet.Click += new System.EventHandler(this.Button_PushToSheet_Click);
       // 
       // progressBar_Push
@@ -104,12 +106,13 @@
       // 
       // button_Cancel
       // 
+      this.button_Cancel.BackColor = System.Drawing.Color.Lime;
       this.button_Cancel.Location = new System.Drawing.Point(809, 20);
       this.button_Cancel.Name = "button_Cancel";
       this.button_Cancel.Size = new System.Drawing.Size(97, 23);
       this.button_Cancel.TabIndex = 6;
       this.button_Cancel.Text = "Close";
-      this.button_Cancel.UseVisualStyleBackColor = true;
+      this.button_Cancel.UseVisualStyleBackColor = false;
       this.button_Cancel.Click += new System.EventHandler(this.Button_Cancel_Click);
       // 
       // FormAddBankData
@@ -124,9 +127,11 @@
       this.Controls.Add(this.button_BrowseFile);
       this.Controls.Add(this.textBox_FileName);
       this.Controls.Add(this.label_SelectFile);
+      this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Name = "FormAddBankData";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "HouseHold";
+      this.Text = "HouseHold Add Bank data";
       this.Load += new System.EventHandler(this.Form_AddBankData_Load);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
       this.ResumeLayout(false);

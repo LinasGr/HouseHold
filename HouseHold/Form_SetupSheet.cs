@@ -13,6 +13,7 @@ namespace HouseHold
     public FormSetupSheet()
     {
       InitializeComponent();
+      FormBorderStyle = FormBorderStyle.FixedSingle;
     }
 
     private void Button_OK_Click(object sender, EventArgs e)

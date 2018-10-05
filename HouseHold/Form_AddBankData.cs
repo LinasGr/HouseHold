@@ -11,6 +11,7 @@ namespace HouseHold
     public FormAddBankData()
     {
       InitializeComponent();
+      FormBorderStyle = FormBorderStyle.FixedSingle;
     }
 
     private void Button_BrowseFile_Click(object sender, EventArgs e)

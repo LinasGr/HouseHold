@@ -40,6 +40,7 @@
       this.numericUpDown_DayCounter = new System.Windows.Forms.NumericUpDown();
       this.numericUpDown_NiteCounter = new System.Windows.Forms.NumericUpDown();
       this.numericUpDown_SingleCounter = new System.Windows.Forms.NumericUpDown();
+      this.button_LoadLastServiceData = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_DayCounter)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_NiteCounter)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SingleCounter)).BeginInit();
@@ -110,22 +111,24 @@
       // 
       // button_PushToSheet
       // 
+      this.button_PushToSheet.BackColor = System.Drawing.Color.Yellow;
       this.button_PushToSheet.Location = new System.Drawing.Point(39, 151);
       this.button_PushToSheet.Name = "button_PushToSheet";
       this.button_PushToSheet.Size = new System.Drawing.Size(100, 23);
       this.button_PushToSheet.TabIndex = 10;
       this.button_PushToSheet.Text = "Push to sheet";
-      this.button_PushToSheet.UseVisualStyleBackColor = true;
+      this.button_PushToSheet.UseVisualStyleBackColor = false;
       this.button_PushToSheet.Click += new System.EventHandler(this.button_PushToSheet_Click);
       // 
       // button_Close
       // 
+      this.button_Close.BackColor = System.Drawing.Color.Lime;
       this.button_Close.Location = new System.Drawing.Point(145, 151);
       this.button_Close.Name = "button_Close";
       this.button_Close.Size = new System.Drawing.Size(100, 23);
       this.button_Close.TabIndex = 11;
       this.button_Close.Text = "Close";
-      this.button_Close.UseVisualStyleBackColor = true;
+      this.button_Close.UseVisualStyleBackColor = false;
       this.button_Close.Click += new System.EventHandler(this.button_Close_Click);
       // 
       // numericUpDown_DayCounter
@@ -182,12 +185,23 @@
       this.numericUpDown_SingleCounter.Size = new System.Drawing.Size(150, 20);
       this.numericUpDown_SingleCounter.TabIndex = 14;
       // 
+      // button_LoadLastServiceData
+      // 
+      this.button_LoadLastServiceData.BackColor = System.Drawing.Color.Lime;
+      this.button_LoadLastServiceData.Location = new System.Drawing.Point(39, 180);
+      this.button_LoadLastServiceData.Name = "button_LoadLastServiceData";
+      this.button_LoadLastServiceData.Size = new System.Drawing.Size(206, 23);
+      this.button_LoadLastServiceData.TabIndex = 15;
+      this.button_LoadLastServiceData.Text = "Load last service data";
+      this.button_LoadLastServiceData.UseVisualStyleBackColor = false;
+      this.button_LoadLastServiceData.Click += new System.EventHandler(this.button_LoadLastServiceData_Click);
+      // 
       // Form_AddServiceData
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(280, 200);
-      this.ControlBox = false;
+      this.ClientSize = new System.Drawing.Size(280, 217);
+      this.Controls.Add(this.button_LoadLastServiceData);
       this.Controls.Add(this.numericUpDown_SingleCounter);
       this.Controls.Add(this.numericUpDown_NiteCounter);
       this.Controls.Add(this.numericUpDown_DayCounter);
@@ -201,6 +215,8 @@
       this.Controls.Add(this.dateTimePicker1);
       this.Controls.Add(this.comboBox_Services);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Name = "Form_AddServiceData";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "HouseHold Add Service Data";
@@ -226,5 +242,6 @@
     private System.Windows.Forms.NumericUpDown numericUpDown_DayCounter;
     private System.Windows.Forms.NumericUpDown numericUpDown_NiteCounter;
     private System.Windows.Forms.NumericUpDown numericUpDown_SingleCounter;
+    private System.Windows.Forms.Button button_LoadLastServiceData;
   }
 }

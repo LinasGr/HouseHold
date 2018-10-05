@@ -77,32 +77,35 @@
       // 
       // button_OK
       // 
+      this.button_OK.BackColor = System.Drawing.Color.Red;
       this.button_OK.Location = new System.Drawing.Point(100, 226);
       this.button_OK.Name = "button_OK";
       this.button_OK.Size = new System.Drawing.Size(75, 23);
       this.button_OK.TabIndex = 4;
       this.button_OK.Text = "OK";
-      this.button_OK.UseVisualStyleBackColor = true;
+      this.button_OK.UseVisualStyleBackColor = false;
       this.button_OK.Click += new System.EventHandler(this.Button_OK_Click);
       // 
       // button_Cancel
       // 
+      this.button_Cancel.BackColor = System.Drawing.Color.Lime;
       this.button_Cancel.Location = new System.Drawing.Point(262, 226);
       this.button_Cancel.Name = "button_Cancel";
       this.button_Cancel.Size = new System.Drawing.Size(75, 23);
       this.button_Cancel.TabIndex = 5;
       this.button_Cancel.Text = "Close";
-      this.button_Cancel.UseVisualStyleBackColor = true;
+      this.button_Cancel.UseVisualStyleBackColor = false;
       this.button_Cancel.Click += new System.EventHandler(this.Button_Cancel_Click);
       // 
       // button_Load
       // 
+      this.button_Load.BackColor = System.Drawing.Color.Lime;
       this.button_Load.Location = new System.Drawing.Point(181, 226);
       this.button_Load.Name = "button_Load";
       this.button_Load.Size = new System.Drawing.Size(75, 23);
       this.button_Load.TabIndex = 6;
       this.button_Load.Text = "Load data";
-      this.button_Load.UseVisualStyleBackColor = true;
+      this.button_Load.UseVisualStyleBackColor = false;
       this.button_Load.Click += new System.EventHandler(this.Button_Save_Click);
       // 
       // dataGridView_Setup
@@ -144,6 +147,8 @@
       this.Controls.Add(this.label_SheetID);
       this.Controls.Add(this.textBox_Name);
       this.Controls.Add(this.label_Name);
+      this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Name = "FormSetupSheet";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "HouseHold sheet setup";

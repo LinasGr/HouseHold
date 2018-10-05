@@ -12,6 +12,7 @@ namespace HouseHold
     public FormAddUserIban()
     {
       InitializeComponent();
+      FormBorderStyle = FormBorderStyle.FixedSingle;
     }
 
 

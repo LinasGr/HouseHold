@@ -8,6 +8,7 @@ namespace HouseHold
     public FormMenu()
     {
       InitializeComponent();
+      FormBorderStyle = FormBorderStyle.FixedSingle;
     }
 
     private void Button_SetupSheet_Click(object sender, EventArgs e)
@@ -40,7 +41,7 @@ namespace HouseHold
       this.Enabled = true;
     }
 
-    private void Button_GetYourData_Click(object sender, EventArgs e)
+    private void Button_BrowseYourData_Click(object sender, EventArgs e)
     {
       this.Enabled = false;
       var getYourData=new FormGetYourData();
@@ -60,9 +61,9 @@ namespace HouseHold
       this.Show();
     }
 
-    void openDialog(string toOpen)
+    private void button_Close_Click(object sender, EventArgs e)
     {
-
+      Close();
     }
   }
 }

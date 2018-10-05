@@ -123,11 +123,11 @@
     <Compile Include="Form_AddBankData.Designer.cs">
       <DependentUpon>Form_AddBankData.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_GetYourData.cs">
+    <Compile Include="Form_BrowseYourData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_GetYourData.Designer.cs">
-      <DependentUpon>Form_GetYourData.cs</DependentUpon>
+    <Compile Include="Form_BrowseYourData.Designer.cs">
+      <DependentUpon>Form_BrowseYourData.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_SetupSheet.cs">
       <SubType>Form</SubType>
@@ -155,8 +155,8 @@
     <EmbeddedResource Include="Form_AddBankData.resx">
       <DependentUpon>Form_AddBankData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_GetYourData.resx">
-      <DependentUpon>Form_GetYourData.cs</DependentUpon>
+    <EmbeddedResource Include="Form_BrowseYourData.resx">
+      <DependentUpon>Form_BrowseYourData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_SetupSheet.resx">
       <DependentUpon>Form_SetupSheet.cs</DependentUpon>
