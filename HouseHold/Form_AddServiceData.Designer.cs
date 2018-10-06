@@ -37,13 +37,10 @@
       this.label5 = new System.Windows.Forms.Label();
       this.button_PushToSheet = new System.Windows.Forms.Button();
       this.button_Close = new System.Windows.Forms.Button();
-      this.numericUpDown_DayCounter = new System.Windows.Forms.NumericUpDown();
-      this.numericUpDown_NiteCounter = new System.Windows.Forms.NumericUpDown();
-      this.numericUpDown_SingleCounter = new System.Windows.Forms.NumericUpDown();
       this.button_LoadLastServiceData = new System.Windows.Forms.Button();
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_DayCounter)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_NiteCounter)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SingleCounter)).BeginInit();
+      this.textBox_DayCounter = new System.Windows.Forms.TextBox();
+      this.textBox_NiteCounter = new System.Windows.Forms.TextBox();
+      this.textBox_SingleCounter = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
       // comboBox_Services
@@ -131,60 +128,6 @@
       this.button_Close.UseVisualStyleBackColor = false;
       this.button_Close.Click += new System.EventHandler(this.button_Close_Click);
       // 
-      // numericUpDown_DayCounter
-      // 
-      this.numericUpDown_DayCounter.DecimalPlaces = 2;
-      this.numericUpDown_DayCounter.Location = new System.Drawing.Point(109, 64);
-      this.numericUpDown_DayCounter.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-      this.numericUpDown_DayCounter.Minimum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            -2147483648});
-      this.numericUpDown_DayCounter.Name = "numericUpDown_DayCounter";
-      this.numericUpDown_DayCounter.Size = new System.Drawing.Size(150, 20);
-      this.numericUpDown_DayCounter.TabIndex = 12;
-      // 
-      // numericUpDown_NiteCounter
-      // 
-      this.numericUpDown_NiteCounter.DecimalPlaces = 2;
-      this.numericUpDown_NiteCounter.Location = new System.Drawing.Point(109, 90);
-      this.numericUpDown_NiteCounter.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-      this.numericUpDown_NiteCounter.Minimum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            -2147483648});
-      this.numericUpDown_NiteCounter.Name = "numericUpDown_NiteCounter";
-      this.numericUpDown_NiteCounter.Size = new System.Drawing.Size(150, 20);
-      this.numericUpDown_NiteCounter.TabIndex = 13;
-      // 
-      // numericUpDown_SingleCounter
-      // 
-      this.numericUpDown_SingleCounter.DecimalPlaces = 2;
-      this.numericUpDown_SingleCounter.Location = new System.Drawing.Point(109, 116);
-      this.numericUpDown_SingleCounter.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-      this.numericUpDown_SingleCounter.Minimum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            -2147483648});
-      this.numericUpDown_SingleCounter.Name = "numericUpDown_SingleCounter";
-      this.numericUpDown_SingleCounter.Size = new System.Drawing.Size(150, 20);
-      this.numericUpDown_SingleCounter.TabIndex = 14;
-      // 
       // button_LoadLastServiceData
       // 
       this.button_LoadLastServiceData.BackColor = System.Drawing.Color.Lime;
@@ -196,15 +139,36 @@
       this.button_LoadLastServiceData.UseVisualStyleBackColor = false;
       this.button_LoadLastServiceData.Click += new System.EventHandler(this.button_LoadLastServiceData_Click);
       // 
+      // textBox_DayCounter
+      // 
+      this.textBox_DayCounter.Location = new System.Drawing.Point(109, 63);
+      this.textBox_DayCounter.Name = "textBox_DayCounter";
+      this.textBox_DayCounter.Size = new System.Drawing.Size(150, 20);
+      this.textBox_DayCounter.TabIndex = 16;
+      // 
+      // textBox_NiteCounter
+      // 
+      this.textBox_NiteCounter.Location = new System.Drawing.Point(109, 89);
+      this.textBox_NiteCounter.Name = "textBox_NiteCounter";
+      this.textBox_NiteCounter.Size = new System.Drawing.Size(150, 20);
+      this.textBox_NiteCounter.TabIndex = 17;
+      // 
+      // textBox_SingleCounter
+      // 
+      this.textBox_SingleCounter.Location = new System.Drawing.Point(109, 115);
+      this.textBox_SingleCounter.Name = "textBox_SingleCounter";
+      this.textBox_SingleCounter.Size = new System.Drawing.Size(150, 20);
+      this.textBox_SingleCounter.TabIndex = 18;
+      // 
       // Form_AddServiceData
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(280, 217);
+      this.Controls.Add(this.textBox_SingleCounter);
+      this.Controls.Add(this.textBox_NiteCounter);
+      this.Controls.Add(this.textBox_DayCounter);
       this.Controls.Add(this.button_LoadLastServiceData);
-      this.Controls.Add(this.numericUpDown_SingleCounter);
-      this.Controls.Add(this.numericUpDown_NiteCounter);
-      this.Controls.Add(this.numericUpDown_DayCounter);
       this.Controls.Add(this.button_Close);
       this.Controls.Add(this.button_PushToSheet);
       this.Controls.Add(this.label5);
@@ -220,9 +184,6 @@
       this.Name = "Form_AddServiceData";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "HouseHold Add Service Data";
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_DayCounter)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_NiteCounter)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SingleCounter)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -239,9 +200,9 @@
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.Button button_PushToSheet;
     private System.Windows.Forms.Button button_Close;
-    private System.Windows.Forms.NumericUpDown numericUpDown_DayCounter;
-    private System.Windows.Forms.NumericUpDown numericUpDown_NiteCounter;
-    private System.Windows.Forms.NumericUpDown numericUpDown_SingleCounter;
     private System.Windows.Forms.Button button_LoadLastServiceData;
+    private System.Windows.Forms.TextBox textBox_DayCounter;
+    private System.Windows.Forms.TextBox textBox_NiteCounter;
+    private System.Windows.Forms.TextBox textBox_SingleCounter;
   }
 }

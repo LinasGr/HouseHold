@@ -48,18 +48,18 @@ namespace HouseHold
 
     private void FindeService()
     {
-      numericUpDown_DayCounter.Value = 0;
-      numericUpDown_NiteCounter.Value = 0;
-      numericUpDown_SingleCounter.Value = 0;
+      textBox_DayCounter.Text = ""+0;
+      textBox_NiteCounter.Text = ""+0;
+      textBox_SingleCounter.Text = ""+0;
       IList<object> raw;
       sheetServices.ReadCellsData("A3:E");
       raw = sheetServices.values.Values.FirstOrDefault(x => x[1].ToString() == dateTimePicker1.Value.ToString("yyyy.MM.dd") &&
                                              x[0].ToString() == comboBox_Services.Text);
       if (raw != null)
       {
-        numericUpDown_DayCounter.Value = int.Parse(raw[2].ToString());
-        numericUpDown_NiteCounter.Value = int.Parse(raw[3].ToString());
-        numericUpDown_SingleCounter.Value = int.Parse(raw[4].ToString());
+        textBox_DayCounter.Text = ""+int.Parse(raw[2].ToString());
+        textBox_NiteCounter.Text = ""+int.Parse(raw[3].ToString());
+        textBox_SingleCounter.Text = ""+int.Parse(raw[4].ToString());
         rowIndex = sheetServices.values.Values.IndexOf(raw);
       }
       else rowIndex = -1;
@@ -82,9 +82,9 @@ namespace HouseHold
       {
         for (int i = sheetServices.values.Values.Count - 1; i > -1; i--)
           if (i != rowIndex) sheetServices.values.Values.RemoveAt(i);
-        sheetServices.values.Values[0][2] = numericUpDown_DayCounter.Value;
-        sheetServices.values.Values[0][3] = numericUpDown_NiteCounter.Value;
-        sheetServices.values.Values[0][4] = numericUpDown_SingleCounter.Value;
+        sheetServices.values.Values[0][2] = textBox_DayCounter.Text;
+        sheetServices.values.Values[0][3] = textBox_NiteCounter.Text;
+        sheetServices.values.Values[0][4] = textBox_SingleCounter.Text;
         sheetServices.UpdateCellsData($"A{rowIndex + 3}:E{rowIndex + 3}");
       }
       else
@@ -93,9 +93,9 @@ namespace HouseHold
         sheetServices.CreateValuesLine(new string[5]{
           comboBox_Services.Text,
           dateTimePicker1.Value.ToString("yyy.MM.dd"),
-          numericUpDown_DayCounter.Value.ToString(),
-          numericUpDown_NiteCounter.Value.ToString(),
-          numericUpDown_SingleCounter.Value.ToString() });
+          textBox_DayCounter.Text,
+          textBox_NiteCounter.Text,
+          textBox_SingleCounter.Text });
         sheetServices.AppentCellsAtEnd("A3:E");
       }
       sheetServices.ReadCellsData("A3:E");
@@ -111,9 +111,9 @@ namespace HouseHold
         .FirstOrDefault(s => s[0].ToString() == comboBox_Services.Text);
       if (raw != null)
       {
-        numericUpDown_DayCounter.Value = int.Parse(raw[2].ToString());
-        numericUpDown_NiteCounter.Value = int.Parse(raw[3].ToString());
-        numericUpDown_SingleCounter.Value = int.Parse(raw[4].ToString());
+        textBox_DayCounter.Text = ""+double.Parse(raw[2].ToString().Replace(',','.'));
+        textBox_NiteCounter.Text = ""+double.Parse(raw[3].ToString().Replace(',', '.'));
+        textBox_SingleCounter.Text = ""+double.Parse(raw[4].ToString().Replace(',', '.'));
       }
       else
         MessageBox.Show("No data for this service found.");
