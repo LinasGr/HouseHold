@@ -5,7 +5,7 @@ using System.IO;
 namespace HouseHold
 {
   /// <summary>
-  /// Class to habdle setup file loading and saving to file
+  /// Class to handle setup file loading and saving to file
   /// </summary>
   class Settings
   {
@@ -19,13 +19,16 @@ namespace HouseHold
       if (File.Exists(_fileName)) LoadData();
       else File.Create(_fileName);
     }
-
+    
+    //Load settings from file
     public void LoadData()
     {
       List<string> lines = File.ReadAllLines(_fileName).ToList();
       if (lines.Count > 0)
         lines.ForEach(x => Data.Add(x.Split(':')[0].ToString(), x.Split(':')[1].ToString()));
     }
+
+    //Save settings to file
     public void SaveData()
     {
       File.WriteAllLines(_fileName, Data.Select(x => x.Key + ":" + x.Value));

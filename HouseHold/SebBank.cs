@@ -2,15 +2,15 @@
 
 namespace HouseHold
 {
+  /// <summary>
+  /// SebBank file parser to Base bank
+  /// </summary>
+ 
   class SebBank : Bank
   {
-    //private Dictionary<int, string> stulpeliai;
+    public SebBank(string fileName) => ReadFileData(fileName);
 
-    public SebBank(string fileName)
-    {
-      ReadFileData(fileName);
-    }
-
+    //Parse data from file to base bank
     public sealed override void ReadFileData(string fileName)
     {
       AccReader file = new AccReader(fileName);

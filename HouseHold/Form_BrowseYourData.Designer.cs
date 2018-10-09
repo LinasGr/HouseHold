@@ -153,29 +153,29 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(287, 401);
+      this.label1.Location = new System.Drawing.Point(311, 401);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(89, 13);
+      this.label1.Size = new System.Drawing.Size(65, 13);
       this.label1.TabIndex = 11;
-      this.label1.Text = "Sum Day counter";
+      this.label1.Text = "Day counter";
       // 
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(287, 427);
+      this.label2.Location = new System.Drawing.Point(311, 427);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(89, 13);
+      this.label2.Size = new System.Drawing.Size(65, 13);
       this.label2.TabIndex = 12;
-      this.label2.Text = "Sum Nite counter";
+      this.label2.Text = "Nite counter";
       // 
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(277, 452);
+      this.label3.Location = new System.Drawing.Point(301, 452);
       this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(99, 13);
+      this.label3.Size = new System.Drawing.Size(75, 13);
       this.label3.TabIndex = 13;
-      this.label3.Text = "Sum Single counter";
+      this.label3.Text = "Single counter";
       // 
       // textBox_DayCounter
       // 
