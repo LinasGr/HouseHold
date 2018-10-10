@@ -16,7 +16,9 @@ namespace HouseHold
     {
       CsvReader file = new CsvReader(fileName);
 
-      Data = (file.Data.Where(z => !z.Contains("Likutis pabaigai") && !z.Contains("Apyvarta")).Select(x => x.Where((xx, i) => i <= 7 && i != 1).ToList()).ToList());
+      Data = (file.Data.Where(z => !z.Contains("Likutis pabaigai") 
+              && !z.Contains("Apyvarta") && !z.Contains("Likutis pradžiai"))
+              .Select(x => x.Where((xx, i) => i <= 7 && i != 1).ToList()).ToList());
       Data.ForEach(d =>
       {
         d[4] = d[4].ToString().Replace('.', ',');
@@ -25,3 +27,4 @@ namespace HouseHold
     }
   }
 }
+ 
