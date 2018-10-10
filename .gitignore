@@ -328,5 +328,3 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
-/client_id.json
-/HouseHold/client_id.json
