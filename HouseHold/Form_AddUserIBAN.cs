@@ -41,7 +41,7 @@ namespace HouseHold
     {
       if (textBox_IBAN.Text.Length > 0)
       {
-        var sheet = new SheetTools.GoogleSheet(_settings.Data["SheetID"], "Users");
+        var sheet = new SheetTools.GoogleSheet(_settings.Data["SheetID"], "UsersIBAN");
         sheet.ReadCellsData("A3:F");
         var col = new string[6];
         bool rawExist = false;
