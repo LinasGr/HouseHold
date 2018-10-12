@@ -25,7 +25,7 @@ namespace HouseHold
 
       label_UserName.Text = _settings.Data["Name"];
       sheet = new GoogleSheet(_settings.Data["SheetID"], "UsersIBAN");
-      sheetServices = new GoogleSheet(_settings.Data["SheetID"], "Services");
+      sheetServices = new GoogleSheet(_settings.Data["SheetID"], "ServicesCounters");
       sheetLists = new GoogleSheet(_settings.Data["SheetID"], "ListsData");
 
       //Services grid Columns creation
@@ -86,12 +86,16 @@ namespace HouseHold
         counterN.Add(double.Parse(dataGridView_ServiceData.Rows[i].Cells[3].Value.ToString().Replace(',', '.')));
         counterS.Add(double.Parse(dataGridView_ServiceData.Rows[i].Cells[4].Value.ToString().Replace(',', '.')));
       }
+
       if (counterD.Count > 0)
         textBox_DayCounter.Text = (counterD.Max() - counterD.Min()).ToString();
+      else textBox_DayCounter.Text = "0";
       if (counterN.Count > 0)
         textBox_NiteCounter.Text = (counterN.Max() - counterN.Min()).ToString();
+      else textBox_NiteCounter.Text = "0";
       if (counterS.Count > 0)
         textBox_SingleCounter.Text = (counterS.Max() - counterS.Min()).ToString();
+      else textBox_SingleCounter.Text = "0";
       textBox_Total.Text = "" + (double.Parse(textBox_DayCounter.Text) +
                                  double.Parse(textBox_NiteCounter.Text) +
                                  double.Parse(textBox_SingleCounter.Text));

@@ -93,7 +93,7 @@
       this.label_Services.Name = "label_Services";
       this.label_Services.Size = new System.Drawing.Size(70, 17);
       this.label_Services.TabIndex = 4;
-      this.label_Services.Text = "Services";
+      this.label_Services.Text = "ServicesCounters";
       // 
       // label_From
       // 
