@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using SheetTools;
 
 namespace HouseHold
 {
@@ -30,6 +33,11 @@ namespace HouseHold
         Close();
       }
       label_User.Text = _settings.Data["Name"];
+      var columns = new ColumnList();
+      var columnsSheet = new GoogleSheet(_settings.Data["SheetID"], "HouseHold");
+      columnsSheet.ReadCellsData("A3:A");
+      columns.ExtractList(columnsSheet.values.Values);
+      columns.List.ForEach(x => comboBox_IBAN.Items.Add(x));
     }
 
     private void Button_Cancel_Click(object sender, EventArgs e)
@@ -45,7 +53,8 @@ namespace HouseHold
         sheet.ReadCellsData("A3:F");
         var col = new string[6];
         bool rawExist = false;
-        var rowsCount = sheet.values.Values.Count;
+        var rowsCount = 0;
+        if (sheet.values.Values != null) rowsCount = sheet.values.Values.Count;
         if (rowsCount > 0)
         {
           rowsCount = 3 + sheet.values.Values.Count;
@@ -74,6 +83,30 @@ namespace HouseHold
         }
         else sheet.AppentCellsAtEnd("A3:F");
       }
+    }
+
+    private void comboBox_IBAN_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      textBox_IBAN.Text = comboBox_IBAN.Text;
+      if (comboBox_IBAN.Text.Length > 0)
+      {
+        var columns = new ColumnList();
+        var columnsSheet = new GoogleSheet(_settings.Data["SheetID"], "HouseHold");
+        columnsSheet.ReadCellsData("A3:C");
+        IList<IList<object>> tmpList = new List<IList<object>>();
+        columnsSheet.values.Values.ToList().ForEach(z =>
+        {
+          if (z.Count == 3) tmpList.Add(new string[] { z[2].ToString(), z[0].ToString() });
+        });
+        columns.ExtractList(tmpList
+          , comboBox_IBAN.Text);
+        columns.List.ForEach(x => comboBox_Explanation.Items.Add(x));
+      }
+    }
+
+    private void comboBox_Explanation_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      textBox_Explanation.Text = comboBox_Explanation.Text;
     }
   }
 }

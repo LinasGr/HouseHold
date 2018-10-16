@@ -19,7 +19,7 @@ namespace HouseHold
       if (File.Exists(_fileName)) LoadData();
       else File.Create(_fileName);
     }
-    
+
     //Load settings from file
     public void LoadData()
     {
